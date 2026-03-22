@@ -30,12 +30,6 @@ Which cities generate the most revenue?
 Which states perform best/worst?
 Are there cities with high cancellations?
 __________________________________
-6. BUSINESS DRIVERS
-Do promotions increase revenue or just volume?
-Do B2B vs B2C customers behave differently?
-What factors most influence high-value orders?
-___________________________________
-
 
 _______________________________________________________________________________________________________________________
 1. CORE BUSINESS HEALTH
@@ -508,28 +502,65 @@ _________________________________________________________________
 Which states perform best/worst?
 
 **SQL Query:**
-  
+-- Which states perform best/worst?
+
+WITH state_revenue AS (
+  SELECT 
+    shipping_state,
+    SUM(amount) AS total_revenue
+  FROM `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_deduplicated`
+  WHERE `shipping_state` IS NOT NULL
+     AND `amount` IS NOT NULL
+  GROUP BY shipping_state
+),
+
+ranked_states AS (
+  SELECT 
+    shipping_state,
+    total_revenue,
+    RANK() OVER (ORDER BY total_revenue DESC) AS top_rank,
+    RANK() OVER (ORDER BY total_revenue ASC) AS bottom_rank
+  FROM state_revenue
+)
+
+SELECT 
+  shipping_state,
+  total_revenue,
+  'Top 5' AS performance_group
+FROM ranked_states
+WHERE top_rank <= 5
+
+UNION ALL
+
+SELECT 
+  shipping_state,
+  total_revenue,
+  'Bottom 5' AS performance_group
+FROM ranked_states
+WHERE bottom_rank <= 5;  
 ...
 
 **Output Description:**
   ## BEST PERFORMING STATES
-shipping_state	total_revenue
-MAHARASHTRA	    12451646.72
-KARNATAKA     	9832369.76
-UTTAR PRADESH	  6441333.57
-TELANGANA	      6345101.03
-TAMIL NADU	    5959175.66
-
+shipping_state	total_revenue	      performance_group
+MAHARASHTRA	    12451646.720000003	Top 5
+KARNATAKA	      9832369.7600000035	Top 5
+UTTAR PRADESH	  6441333.5700000161	Top 5
+TELANGANA	      6345101.0300000031	Top 5
+TAMIL NADU	    5959175.6599999964	Top 5
   ## WORST PERFORMING STATES
-shipping_state	total_revenue
-APO	
-PB	399.0
-AR	493.0
-PONDICHERRY	529.0
-RAJSHTHAN	563.0
+PB	            399.0	              Bottom 5
+AR	            493.0	              Bottom 5
+PONDICHERRY	    529.0	              Bottom 5
+RAJSHTHAN	      563.0	              Bottom 5
+PUNJAB/MOHALI/ZIRAKPUR	568.0	      Bottom 5
 ...
 
 **Insight:**
+  “The revenue distribution across regions is highly skewed, with a small number of regions contributing the majority of sales.
+  This indicates strong market concentration, while several regions show significantly lower performance, suggesting potential 
+  opportunities for market expansion or operational improvement. However, the reliance on top-performing regions also introduces 
+  revenue concentration risk.”
 ...
 _________________________________________________________________
   ## Task X: Create Cleaned Dataset View
@@ -538,12 +569,33 @@ _________________________________________________________________
 Are there cities with high cancellations?
 
 **SQL Query:**
+  -- We will take the top 10 cities
+SELECT `shipping_city`, SUM(is_cancelled) AS number_of_cancellations
+FROM `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_deduplicated`
+GROUP BY `shipping_city`
+ORDER BY `number_of_cancellations` DESC
+LIMIT 10
 ...
 
 **Output Description:**
+shipping_city	number_of_cancellations
+BENGALURU	    1311
+HYDERABAD	    1194
+NEW DELHI	    788
+MUMBAI	      784
+CHENNAI	      721
+PUNE	        556
+KOLKATA	      354
+THANE	        248
+LUCKNOW	      231
+GURUGRAM	    208
 ...
 
 **Insight:**
+  The cities with the high cancellation most likely don't value the products as much, therefore they are less likely to be lifelong 
+  customers. Thus, it would require large funding of marketing to establish the products in those cities.
+  Or it could be the case that there is a courier/website lag or malfunction specific to that those specific city that 
+  frustrates the customers and results in them cancelling. This case would be easier and cheaper to fix than the former case.
 ...
 _________________________________________________________________
 __________________________________________________________________________________________________________________________
@@ -587,70 +639,57 @@ _________________________________________________________________
 Which states perform best/worst?
 
 **SQL Query:**
+  ## By Revenue
+SELECT `shipping_state`, ROUND(SUM(amount), 2) AS total_revenue
+FROM `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_deduplicated`
+GROUP BY `shipping_state`
+ORDER BY `total_revenue` DESC
+LIMIT 10
+
+  NOTE: THESE QUERIES WILL HAVE TO BE RUN SEPARATELY
+  
+  ## By Quantity
+SELECT  `shipping_state`, SUM(quantity) AS total_quantity
+FROM `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_deduplicated`
+GROUP BY `shipping_state`
+ORDER BY `total_quantity` DESC
+LIMIT 10
 ...
 
 **Output Description:**
+  ## By Revenue
+shipping_state	total_revenue
+MAHARASHTRA	    12447098.97
+KARNATAKA	      9826657.94
+UTTAR PRADESH	  6427988.65
+TELANGANA	      6336032.65
+TAMIL NADU	    5961710.59
+DELHI	          4074045.05
+KERALA	        3559161.49
+WEST BENGAL	    3322491.76
+ANDHRA PRADESH	2955181.58
+HARYANA	        2702759.68
+
+  ## By Quantity
+shipping_state	total_quantity
+MAHARASHTRA	    18969
+KARNATAKA	      14835
+TAMIL NADU	    9552
+TELANGANA	      9402
+UTTAR PRADESH	  8973
+DELHI	          5937
+KERALA	        5392
+WEST BENGAL	    5033
+ANDHRA PRADESH	4409
+GUJARAT	        3848
 ...
 
 **Insight:**
-...
-_________________________________________________________________
-  ## Task X: Create Cleaned Dataset View
-
-**Business Question:**
-Are there cities with high cancellations?
-
-**SQL Query:**
-...
-
-**Output Description:**
-...
-
-**Insight:**
-...
-_________________________________________________________________
-__________________________________________________________________________________________________________________________
-6. BUSINESS DRIVERS
-  ## Task X: Create Cleaned Dataset View
-
-**Business Question:**
-Do promotions increase revenue or just volume?
-
-**SQL Query:**
-...
-
-**Output Description:**
-...
-
-**Insight:**
-...
-_________________________________________________________________
-  ## Task X: Create Cleaned Dataset View
-
-**Business Question:**
-Do B2B vs B2C customers behave differently?
-
-**SQL Query:**
-...
-
-**Output Description:**
-...
-
-**Insight:**
-...
-_________________________________________________________________
-## Task X: Create Cleaned Dataset View
-
-**Business Question:**
-What factors most influence high-value orders?
-
-**SQL Query:**
-...
-
-**Output Description:**
-...
-
-**Insight:**
+  This tells us where which states have the highest demand for the company products and which states the most products. Some 
+  funding for marketing can targeted away from the states with the highest revenue since they have less space for growth, assuming the 
+  the population of the said states consist of fairly few people. With regards to the quantity bought by each state, there is a wide 
+  gap between the two most popular states and the other states. This shows that the two states (MAHARASHTRA AND KARNATAKA) most likely have the 
+  products as a staple (perhaps as a symbol of culture or influence).
 ...
 _________________________________________________________________
 __________________________________________________________________________________________________________________________
