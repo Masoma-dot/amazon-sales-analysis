@@ -121,15 +121,24 @@ ________________________________________________________________________________
 ## Task X: Create Cleaned Dataset View
 
 **Business Question:**
-What is the analysis-ready version of the Amazon sales dataset after standardizing structure, handling missing values, and creating key business flags?
+How do we ensure that the Order IDs have no duplicates?
 
 **SQL Query:**
+SELECT *, ranked_data
+FROM
+    (SELECT *, ROW_NUMBER() OVER (PARTITION BY order_id ORDER BY order_date) AS ranked_data
+     FROM `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_data`)
+WHERE ranked_data = 1
+
 ...
 
 **Output Description:**
+        The ORDER ID duplicates are removed. Out of the duplicates, only the Order IDs with the latest date are kept in the data.
 ...
 
 **Insight:**
+        Should they were not removed, the data would have been misleading as it would have counted a value twice or it was going to account
+        for incorrectly input data.
 ...
 
 
@@ -137,15 +146,34 @@ ________________________________________________________________________________
 ## Task X: Create Cleaned Dataset View
 
 **Business Question:**
-What is the analysis-ready version of the Amazon sales dataset after standardizing structure, handling missing values, and creating key business flags?
+How can we ensure that we can work with the deduplicated data without constantly ensuring there is a query that keeps it deduplicated?
+        By creating a new VIEW.
 
 **SQL Query:**
+        CREATE OR REPLACE VIEW `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_deduplicated` AS
+WITH no_duplicates AS (
+    SELECT *
+    FROM (
+        SELECT *,
+               ROW_NUMBER() OVER (
+                   PARTITION BY `order_id`
+                   ORDER BY `order_date`
+               ) AS ranked_data
+        FROM `capstone-projects-489309.amazon_sales_analysis.amazon_cleaned_data`
+    )
+    WHERE ranked_data = 1
+)
+SELECT * FROM no_duplicates;
+
 ...
 
 **Output Description:**
+        The data is deduplicated without a query constantly required to keep it deduplicated.
 ...
 
 **Insight:**
+        We can now work with the VIEW properly while reducing debugging. This also ensures the data doesn't give us misleading values
+        that might lead to invalid business insights because of the duplicates.
 ...
 
 
