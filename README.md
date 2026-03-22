@@ -32,7 +32,34 @@ Analyze Amazon sales data to uncover revenue trends, product performance, and re
 (To be filled)
 
 ## Key Questions
+### 1. CORE BUSINESS HEALTH
+#### What is the total revenue?
+#### What is the total number of orders?
+#### What is the total quantity sold?
+#### What is the cancellation rate?
+#### What is the average order value (AOV)?
+____________________________________________________
+### 2. TIME-BASED ANALYSIS
+#### How does revenue trend over time (daily/monthly)?
+#### Which days had the highest sales?
+#### Are there sales spikes or drops?
+#### How does cancellation trend over time?
 
+### 3. PRODUCT ANALYSIS
+#### Which categories generate the most revenue?
+#### Which categories have the highest cancellations?
+#### Which products (SKU/ASIN) perform best?
+#### What is the average order value per category?
+
+### 4. CUSTOMER/LOCATION ANALYSIS
+#### Which cities generate the most revenue?
+#### Which states perform best/worst?
+#### Are there cities with high cancellations?
+
+### 5. OPERATIONS & LOGISTICS
+#### Which cities generate the most revenue?
+#### Which states perform best/worst?
+#### Are there cities with high cancellations?
 
 ## 📈 Key Insights
 (To be filled)
