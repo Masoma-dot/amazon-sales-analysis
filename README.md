@@ -30,8 +30,9 @@ Analyze Amazon sales data to uncover revenue trends, product performance, and re
 ##### courier_status - track the shipping condition of the order in the courier's responsibility
 
 
-## 🔄 Data Transformation
-(To be filled)
+## Data Transformation
+### Business Question:
+How can we create a cleaner version of the dataset that we will be able to further clean and then import to our visualisation tools?
 
 ## Key Questions
 ### 1. CORE BUSINESS HEALTH
