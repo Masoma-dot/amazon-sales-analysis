@@ -81,5 +81,34 @@ ____________________________________________________
 ## 📊 Dashboard
 (To be filled)
 
-## 💡 Recommendations
-(To be filled)
+## Business Recommendations
+
+#### 1. Expand in Underperforming Regions (Growth Opportunity)
+Revenue is heavily concentrated in a few regions, leaving significant untapped markets.
+
+#### Action:
+
+Launch targeted marketing campaigns in low-performing regions
+Adjust product offerings and pricing to match regional demand
+
+#### 2. Maximize Top-Performing Products (Revenue Driver)
+A small number of products generate the majority of revenue.
+
+#### Action:
+Ensure consistent stock availability
+Promote top products through ads and bundling strategies
+Use them to drive cross-selling
+
+#### 3. Stabilize Revenue Volatility (Business Risk)
+Revenue shows high daily fluctuations with no consistent upward trend.
+
+#### Action:
+Introduce consistent promotions (weekly/monthly campaigns)
+Implement customer retention strategies (loyalty, repeat incentives)
+
+#### 4. Optimize Operations in High-Demand Areas (Efficiency)
+High-performing regions drive most of the business and require operational reliability.
+
+#### Action:
+Improve inventory allocation and delivery efficiency
+Investigate cancellation causes in high-volume areas
