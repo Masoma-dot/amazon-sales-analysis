@@ -1,5 +1,7 @@
 # Amazon E-commerce Sales Analysis
 
+Note: This project was independently completed. AI tools were used to refine explanations and improve documentation clarity.
+
 ## Business Objective
 Analyze Amazon sales data to uncover revenue trends, product performance, and regional insights to support business decision-making.
 
