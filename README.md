@@ -33,7 +33,7 @@ Analyze Amazon sales data to uncover revenue trends, product performance, and re
 ## DATA TRANSFORMATION
 #### Business Question:
 How can we create a cleaner version of the dataset that we will be able to further clean and then import to our visualisation tools?
-####Insight:
+#### Insight:
   - The problematic "unnamed: 22" is now gone.
   - We will not find any inconsistencies in the shipping city data, such as the same city being written in different letter cases
   and thus being interpreted as being different.
