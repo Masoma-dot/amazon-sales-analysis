@@ -1,14 +1,14 @@
-# Amazon E-commerce Sales Analysis
+# AMAZON E-COMMERCE SALES ANALYSIS
 
 Note: This project was independently completed. AI tools were used to refine explanations and improve documentation clarity.
 
-## Business Objective
+## BUSINESS OBJECTIVES
 Analyze Amazon sales data to uncover revenue trends, product performance, and regional insights to support business decision-making.
 
-## 📊 Dataset Overview
+## DATASET OVERVIEW
 (To be filled)
 
-## Data Cleaning
+## DATA CLEANING
 ##### Source: Kaggle (specifically: https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data)
 #### IMPORTANT COLUMN DESCRIPTIONS:
 ##### order_id - it shows the order IDs put by the customers
@@ -30,41 +30,47 @@ Analyze Amazon sales data to uncover revenue trends, product performance, and re
 ##### courier_status - track the shipping condition of the order in the courier's responsibility
 
 
-## Data Transformation
-### Business Question:
+## DATA TRANSFORMATION
+#### Business Question:
 How can we create a cleaner version of the dataset that we will be able to further clean and then import to our visualisation tools?
+####Insight:
+  - The problematic "unnamed: 22" is now gone.
+  - We will not find any inconsistencies in the shipping city data, such as the same city being written in different letter cases
+  and thus being interpreted as being different.
+  - The three new columns will help with dealing with the NULL values of the corresponding columns. They help us avoid making errors and
+  inefficies because we would have to constantly filter out NULL values if it were not for them. Also, they serve as good KPI measures.
 
-## Key Questions
-### 1. CORE BUSINESS HEALTH
+## KEY QUESTIONS
+### 1. Core Business Health
 #### What is the total revenue?
 #### What is the total number of orders?
 #### What is the total quantity sold?
 #### What is the cancellation rate?
 #### What is the average order value (AOV)?
 ____________________________________________________
-### 2. TIME-BASED ANALYSIS
+### 2. Time-Based Analysis
 #### How does revenue trend over time (daily/monthly)?
 #### Which days had the highest sales?
 #### Are there sales spikes or drops?
 #### How does cancellation trend over time?
 
-### 3. PRODUCT ANALYSIS
+### 3. Product Analysis
 #### Which categories generate the most revenue?
 #### Which categories have the highest cancellations?
 #### Which products (SKU/ASIN) perform best?
 #### What is the average order value per category?
 
-### 4. CUSTOMER/LOCATION ANALYSIS
+### 4. Customer/Location Analysis
 #### Which cities generate the most revenue?
 #### Which states perform best/worst?
 #### Are there cities with high cancellations?
 
-### 5. OPERATIONS & LOGISTICS
+### 5. Operations & Logistics
 #### Which cities generate the most revenue?
 #### Which states perform best/worst?
 #### Are there cities with high cancellations?
 
-## 📈 Key Insights (IN SHORT DETAIL. THE FULL DETAIL IS IN insights.md)
+## KEY INSIGHTS (IN SHORT DETAIL. THE FULL DETAIL IS IN insights.md)
 ### Overall Conclusion
 #### The business shows strong revenue generation, high order reliability, and clear product-market fit.
 #### However, performance is characterized by:
@@ -79,7 +85,7 @@ ____________________________________________________
 #### - Optimize logistics in high-performing areas
 #### - Investigate and reduce cancellation drivers at scale
 
-## 📊 Dashboard
+## DASHBOARD
 (To be filled)
 
 ## Business Recommendations
