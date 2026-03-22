@@ -61,8 +61,20 @@ ____________________________________________________
 #### Which states perform best/worst?
 #### Are there cities with high cancellations?
 
-## 📈 Key Insights
-(To be filled)
+## 📈 Key Insights (IN SHORT DETAIL. THE FULL DETAIL IS IN insights.md)
+### Overall Conclusion
+#### The business shows strong revenue generation, high order reliability, and clear product-market fit.
+#### However, performance is characterized by:
+####  - high revenue concentration (products & regions)
+####  - short-term volatility in sales trends
+####  - untapped potential in underperforming regions
+
+### Strategic Focus Areas:
+
+#### - Diversify revenue across more regions
+#### - Stabilize revenue trends through consistent demand strategies
+#### - Optimize logistics in high-performing areas
+#### - Investigate and reduce cancellation drivers at scale
 
 ## 📊 Dashboard
 (To be filled)
