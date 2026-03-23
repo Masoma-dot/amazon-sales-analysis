@@ -88,7 +88,7 @@ ____________________________________________________
 ## DASHBOARD
 (To be filled)
 
-## Business Recommendations
+## BUSINESS RECOMMENDATIONS
 
 #### 1. Expand in Underperforming Regions (Growth Opportunity)
 Revenue is heavily concentrated in a few regions, leaving significant untapped markets.
@@ -119,3 +119,6 @@ High-performing regions drive most of the business and require operational relia
 #### Action:
 Improve inventory allocation and delivery efficiency
 Investigate cancellation causes in high-volume areas
+
+
+THE CLEANED DATASET IN GOOGLE BIGQUERY WILL CONNECTED TO POWER BI FOR VISUALISATIONS.
