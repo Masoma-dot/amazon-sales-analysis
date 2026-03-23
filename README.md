@@ -86,9 +86,41 @@ ____________________________________________________
 #### - Investigate and reduce cancellation drivers at scale
 
 ## DASHBOARD
+THE CLEANED DATASET IN GOOGLE BIGQUERY WILL CONNECTED TO POWER BI FOR VISUALISATIONS.
+##### Quick, important facts before gathering insights from the visuals.
+India is generally classified as a lower-middle-income country by global standards.
+For the average citizen, spending around INR 649.51 every 30 days on clothing would be considered moderate to somewhat discretionary, meaning affordable for middle-class consumers but relatively high for lower-income groups.
+The average monthly salary in India is roughly INR 25,000–30,000, though it varies widely by region, job type, and urban vs rural areas.
+#### EXECUTIVE OVERVIEW
+
+Key Performance Indices
+
 <img width="657" height="75" alt="amazon-kpi-insights-visualisation" src="https://github.com/user-attachments/assets/792b00f9-a045-421c-9247-f9d96903fc25" />
 
-(To be filled)
+The average order cost is 649.81. With the average monthly salary of 25,000-30,000, affordability/prices of the products is not a problem. The total quantity of 108,771 is underwhelming (since India has a population of roughly 1.43 billion people, therefore saturation is not the problem and there is a lot of room for quantity growth. The same applies to the total revenue made during the period.
+
+
+Total Revenue Made Each Day
+<img width="754" height="262" alt="amazon-revenue-by-day-visualisation" src="https://github.com/user-attachments/assets/2556060d-bf4a-49e3-ba33-cbe268ebbf8d" />
+
+The period is between 30 April and 31 May. The total revenue decreases steadily during this period. This shows the customers are non-recurring. The customers can afford to buy at anytime of the month (as the revenue doesn't dip rapidly even during no-pay periods during the month).
+
+#### PRODUCT PERFORMANCE
+<img width="757" height="260" alt="10-highest-revenue-sku-visualization" src="https://github.com/user-attachments/assets/67224f15-1cde-479f-92ed-7fd73795fe41" />
+
+Most of the revenue is made by a select few of SKUs (roughly 30 SKUs). This roughly makes Pareto's rule valid: 80% of revenue comes from 20% of the SKUs. For a higher return of revenue, most of the focus should on the top 30 SKUs.
+
+#### REGIONAL PERFORMANCE
+<img width="756" height="414" alt="revenue-by-state-visualisation" src="https://github.com/user-attachments/assets/a86f4851-2a44-4473-bc73-a8d0c823d2ba" />
+
+Almost 100% of the revenue comes from 25 states. Thus, people are extremely aware of the products in those states. Marketing in those states should be aimed convert the customers to reoccuring, and at integrating the products with culture that will spread to the other states through campaigns, for example.
+
+#### CANCELLATION INSIGHTS
+<img width="346" height="58" alt="amazon-order-cancellation-summary-table" src="https://github.com/user-attachments/assets/31c88f26-09c2-4e97-9432-e578ee53ab18" />
+<img width="534" height="196" alt="amazon-cancellations-by-state-visualisation" src="https://github.com/user-attachments/assets/e8933198-dba8-451a-8ccf-298dcdcf6cf6" />
+
+Almost 5% of the orders are cancelled. This creates unnecessary expenses, reduces the profit and caused INR 6,412,390 loss of potential revenue. Only 10 states are the cause for most of the cancellations. Website and courier functionality in those states should be made efficient. Quality control should be ensured before delivering the products.
+A survey should be run, asking reasons for cancellations. This is especially for B2B transactions since they are most likely reoccuring.
 
 ## BUSINESS RECOMMENDATIONS
 
@@ -121,6 +153,3 @@ High-performing regions drive most of the business and require operational relia
 #### Action:
 Improve inventory allocation and delivery efficiency
 Investigate cancellation causes in high-volume areas
-
-
-THE CLEANED DATASET IN GOOGLE BIGQUERY WILL CONNECTED TO POWER BI FOR VISUALISATIONS.
