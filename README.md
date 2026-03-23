@@ -86,6 +86,8 @@ ____________________________________________________
 #### - Investigate and reduce cancellation drivers at scale
 
 ## DASHBOARD
+<img width="657" height="75" alt="amazon-kpi-insights-visualisation" src="https://github.com/user-attachments/assets/792b00f9-a045-421c-9247-f9d96903fc25" />
+
 (To be filled)
 
 ## BUSINESS RECOMMENDATIONS
